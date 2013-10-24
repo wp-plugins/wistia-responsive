@@ -63,8 +63,8 @@ class SS_Wistia_Responsive {
  
 		// Hooks
 		add_action( 'wp_enqueue_scripts', array( self::$instance, 'register_wistia_iframe_api' ) );
-		add_filter( 'the_excerpt', array( self::$instance, 'make_responsive', 10, 1 ) );
-		add_filter( 'the_content', array( self::$instance, 'make_responsive', 10, 1 ) );
+		add_filter( 'the_excerpt', array( self::$instance, 'make_responsive' ), 10, 1 );
+		add_filter( 'the_content', array( self::$instance, 'make_responsive' ), 10, 1 );
 	}
  
 	/**
