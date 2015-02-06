@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Automatically makes Wistia embeds responsive.
  *
  * @class 		SS_Wistia_Responsive
- * @version		1.0
+ * @version		1.1
  * @package		Wistia Responsive
  * @author 		Saint Systems
  */
@@ -113,7 +113,7 @@ class SS_Wistia_Responsive {
 	 * Add the "videoFoam" parameter to enable the Wistia player to become responsive
 	 */
 	function make_responsive( $content ) {
-		return preg_replace( '/src="http:\/\/fast.wistia.net\/embed\/iframe\/(.*)"/isU', 'src="http://fast.wistia.net/embed/iframe/${1}?videoFoam=true"', $content );
+		return preg_replace( '/src="(.*)\/\/fast.wistia.net\/embed\/iframe\/(.*)"/isU', 'src="${1}//fast.wistia.net/embed/iframe/${2}?videoFoam=true"', $content );
 
 	} //end function make_responsive( $content )
 
